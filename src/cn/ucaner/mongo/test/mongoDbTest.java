@@ -12,6 +12,17 @@ import com.mongodb.client.result.UpdateResult;
 import cn.ucaner.mongo.dao.MongoDbDao;
 import cn.ucaner.mongo.util.LoadMongoProps;
 
+/**
+* @Package：cn.ucaner.mongo.test   
+* @ClassName：mongoDbTest   
+* @Description：   <p> mongoDbTest </p>
+* @Author： - DaoDou   
+* @CreatTime：2017年12月29日 下午4:41:32   
+* @Modify By：   
+* @ModifyTime：  2017年12月29日
+* @Modify marker：   
+* @version    V1.0
+ */
 public class mongoDbTest {
 
 	@Before

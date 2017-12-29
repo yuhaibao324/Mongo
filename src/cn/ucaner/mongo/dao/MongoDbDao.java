@@ -2,6 +2,7 @@ package cn.ucaner.mongo.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
@@ -50,6 +51,19 @@ public class MongoDbDao {
 		MongoDatabase db = client.getDatabase(databaseName);
 		collection = db.getCollection(collectionName);
 		System.out.println(collection);
+	}
+	
+	
+	public static void connectByProps(Map<String,String> params) {
+		Integer port = Integer.parseInt(params.get("port"));
+		String hostName = params.get("hostName");
+		String databaseName = params.get("databaseName");
+		String collectionName = params.get("collectionName");
+		MongoClient client = new MongoClient(hostName, port);
+		MongoDatabase db = client.getDatabase(databaseName);
+		collection = db.getCollection(collectionName);
+		System.out.println(collection);
+		
 	}
 
 	/**

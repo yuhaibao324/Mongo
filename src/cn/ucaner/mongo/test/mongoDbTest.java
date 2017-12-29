@@ -1,6 +1,8 @@
 package cn.ucaner.mongo.test;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.bson.Document;
 import org.junit.Before;
@@ -8,12 +10,24 @@ import org.junit.Test;
 
 import com.mongodb.client.result.UpdateResult;
 import cn.ucaner.mongo.dao.MongoDbDao;
+import cn.ucaner.mongo.util.LoadMongoProps;
 
 public class mongoDbTest {
 
 	@Before
 	public void before() {
-		MongoDbDao.connect("cashier_trade", "col", "192.168.200.224", 27017);
+		//MongoDbDao.connect("xxxx", "xxxxx", "192.168.200.xxxx", 27017);
+		String addresses = LoadMongoProps.instance().getAddresses();
+		String[] strs = addresses.split(":");
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("port",strs[1]);
+		params.put("hostName", strs[0]);
+		params.put("databaseName", strs[0]);
+		params.put("collectionName", strs[0]);
+		String hostName = params.get("hostName");
+		String databaseName = params.get("databaseName");
+		String collectionName = params.get("collectionName");
+		MongoDbDao.connectByProps(params);
 	}
 
 	@Test

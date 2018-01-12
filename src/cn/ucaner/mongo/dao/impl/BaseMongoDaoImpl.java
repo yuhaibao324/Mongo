@@ -129,25 +129,21 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 
 	@Override
 	public List<T> findAll() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Long count() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Long count(T entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public PK insert(T entity) {
-		// TODO Auto-generated method stub
 		MongoDatabase db = mongoClient.getDatabase(currentDataBase());
 		String className = entity.getClass().getName();
 		DBObject dbObject = (DBObject) JSON.parse(com.alibaba.fastjson.JSON.toJSONString(entity));
@@ -158,13 +154,11 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 
 	@Override
 	public void delete(T entity) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void deleteById(PK id) {
-		// TODO Auto-generated method stub
 
 	}
 

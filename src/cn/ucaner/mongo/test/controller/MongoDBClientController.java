@@ -13,6 +13,7 @@ package cn.ucaner.mongo.test.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -66,7 +67,11 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	@RequestMapping(value = "/add")
 	public Long save() {
 		TestEntity entity = new TestEntity();
-		entity.set_id(11111L);
+		//随机
+		 long random = new Random().nextLong();
+		entity.set_id(random);
+		entity.setCode("HelloWorld!  -- good test Ucaner!");
+		entity.setName("Jason");
 		Long entity_Id = testEntityService.insert(entity);
 		logger.info("id:{}",entity_Id);
 		return entity_Id;

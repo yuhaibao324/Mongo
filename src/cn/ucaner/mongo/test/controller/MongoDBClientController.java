@@ -84,7 +84,8 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	@ResponseBody
 	@RequestMapping(value = "/index")
 	public void index() {
-		String indexName = testEntityService.createIndex("name");
+		String indexName = testEntityService.createIndex("name:"+new Random().nextInt());
+		System.out.println(indexName);
 		logger.info("indexName:{}", indexName);
 	}
 	
@@ -97,10 +98,11 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	@RequestMapping(value = "/find")
 	public List<TestEntity> findParams() {
 		Map<String, Object> paraMap = new HashMap<String, Object>();
-		paraMap.put("code", "Ucaner");
-		paraMap.put("project", "MongoDB");
+		paraMap.put("name", "Jason");
+		//paraMap.put("project", "MongoDB");
 		List<TestEntity> entities = testEntityService.findByParams(paraMap);
 		for (TestEntity entity : entities) {
+			System.out.println(JSON.toJSONString(entity));
 			logger.info("queryRes:{}", JSON.toJSONString(entity, SerializerFeature.NotWriteDefaultValue));
 		}
 		return entities;

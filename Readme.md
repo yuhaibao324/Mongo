@@ -35,7 +35,7 @@ http://mongo.ucaner.cn
 - (数据库)mongodb中多个文档构成集合，多个集合构成数据库。
 - (Shell)Mongodb Shell即自带的javascript shell,javascript解释器.运行mongo启动shell后自动连接Mongodb服务器,运行javascript程序
 
-> eg:
+  eg:
   shell操作：
   1.创建：db.a.insert({"name":"jason","age":23})
           db.a.insert({"name":"andy","age":22})

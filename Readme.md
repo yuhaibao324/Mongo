@@ -22,11 +22,12 @@ http://mongo.ucaner.cn
 ![](http://upload-images.jianshu.io/upload_images/7802425-df1b75c344c21878.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 逻辑结构图
-![](http://upload-images.jianshu.io/upload_images/7802425-df1b75c344c21878.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7802425-fbe8281e48a6649c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### MongoDB GUI
+### MongoDB Liunx
 ![](http://upload-images.jianshu.io/upload_images/7802425-bfb65b86e4b9987f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+### MongoDB GUI
 ![](http://upload-images.jianshu.io/upload_images/7802425-4a809b0d7fda63a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Ucaner mongo

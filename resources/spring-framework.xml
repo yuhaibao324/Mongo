@@ -41,7 +41,7 @@
         <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
     </context:component-scan>
     
-    <!-- 引入mongoDB  -->
+    <!-- 引入mongoDB 获取  mongoClient-->
     <import resource="classpath*:/mongodb/mongodb.xml" />
     
 </beans>

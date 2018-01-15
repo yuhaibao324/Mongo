@@ -8,6 +8,7 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
     default-lazy-init="false">
     
+    <!-- mongoDB 配置 -->
 	<bean id="mongoDBConfig" class="cn.ucaner.mongo.config.MongoDBConfig">
 		<property name="user" value="${mongo.server.user}"></property>
 		<property name="dataBase" value="${mongo.server.dataBase}"></property>
@@ -20,11 +21,13 @@
 		<property name="socketTimeout" value="${mongo.server.socketTimeout}"></property>
 		<property name="sslEnabled" value="${mongo.server.sslEnabled}"></property>
 	</bean>
-
+	
+	<!-- 工厂模式 配置mongoDB  -->
 	<bean id="mongoDBFactory" class="cn.ucaner.mongo.MongoDBFactory">
 		<property name="config" ref="mongoDBConfig"></property>
 	</bean>
 	
+	<!-- mongoClient   初始化bean  -->
 	<bean id="mongoClient" factory-bean="mongoDBFactory" factory-method="createClient" />
 	
 </beans>

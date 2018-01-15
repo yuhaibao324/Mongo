@@ -163,7 +163,6 @@ public interface BaseMongoDao<T extends BaseMongoEntity, PK extends Serializable
 	 * @Description 生成索引
 	 * @param fieldNames
 	 * @return 索引Name
-	 * @date 2017年6月5日
 	 */
 	public String createIndex(String fieldNames);
 
@@ -171,23 +170,20 @@ public interface BaseMongoDao<T extends BaseMongoEntity, PK extends Serializable
 	 * @Description 根据查询条件查找对象
 	 * @param queryCond
 	 * @return
-	 * @date 2017年6月5日
 	 */
 	public List<T> findByCondition(BasicDBObject queryCond);
 
 	/**
-	 * @Description
 	 * @param condition
 	 *            更新条件
 	 * @param newObj
 	 *            需更新的信息 <br>
-	 *            eg:将name=yuce的记录的年龄更新为32<br>
+	 *            eg:将name=Jason的记录的年龄更新为32<br>
 	 *            BasicDBObject condition = new BasicDBObject();<br>
 	 *            condition.put("name","yuce");<br>
 	 *            BasicDBObject newObj=new BasicDBObject();<br>
 	 *            newObj.put("age",32);<br>
 	 *            update(condition , newObj);
-	 * @date 2017年6月5日
 	 */
 	public Long update(BasicDBObject condition, BasicDBObject newObj);
 }

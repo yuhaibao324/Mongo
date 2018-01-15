@@ -171,7 +171,6 @@ public interface BaseMongoService<T extends BaseMongoEntity, PK extends Serializ
 	 * @Description 生成索引
 	 * @param fieldNames
 	 * @return 索引Name
-	 * @date 2017年6月5日
 	 */
 	public String createIndex(String fieldNames);
 
@@ -179,7 +178,6 @@ public interface BaseMongoService<T extends BaseMongoEntity, PK extends Serializ
 	 * @Description 根据对象属性查找对象,多个条件默认and连接 条件都为等值判断
 	 * @param paraMap
 	 * @return
-	 * @date 2017年6月5日
 	 */
 	public List<T> findByParams(Map<String, Object> paraMap);
 
@@ -187,7 +185,6 @@ public interface BaseMongoService<T extends BaseMongoEntity, PK extends Serializ
 	 * @Description 根据条件查询 多个条件默认and连接
 	 * @param vos
 	 * @return
-	 * @date 2017年6月6日
 	 * @return 更新记录的条数
 	 */
 	public List<T> findByCondition(ConditionVo... vos);
@@ -196,7 +193,6 @@ public interface BaseMongoService<T extends BaseMongoEntity, PK extends Serializ
 	 * @Description 根据条件更新信息 多个条件默认and连接,条件都为等值判断
 	 * @param conditionMap
 	 * @param updateMap
-	 * @date 2017年6月6日
 	 * @return 更新记录的条数
 	 */
 	public Long update(Map<String, Object> conditionMap, Map<String, Object> updateMap);
@@ -205,7 +201,6 @@ public interface BaseMongoService<T extends BaseMongoEntity, PK extends Serializ
 	 * @Description 根据条件更新信息 多个条件为and连接
 	 * @param conditions
 	 * @param updateMap
-	 * @date 2017年6月6日
 	 * @return 更新记录的条数
 	 */
 	public Long update(List<ConditionVo> conditions, Map<String, Object> updateMap);

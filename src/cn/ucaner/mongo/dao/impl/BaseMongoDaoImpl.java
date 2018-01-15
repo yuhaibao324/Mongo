@@ -68,7 +68,6 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 
 	/**
 	 * 获取接口的泛型类型，如果不存在则返回null
-	 * 
 	 * @param clazz
 	 * @return
 	 */
@@ -81,38 +80,43 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 		return null;
 	}
 
+	/**
+	 * 查找
+	 */
 	@Override
 	public T find(T entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * 根据id查找
+	 */
 	@Override
 	public T findById(PK id) {
-		// TODO Auto-generated method stub
 		MongoDatabase db = mongoClient.getDatabase(currentDataBase());
 		MongoCollection<DBObject> collection = db.getCollection(getGenericClass().getName(), DBObject.class);
 		DBObject object = collection.find(new BasicDBObject(DBConstant.PK_FIELD, id)).first();
 		return (T) com.alibaba.fastjson.JSON.parseObject(object.toString(), getGenericClass());
 	}
 
+	/**
+	 * 根据ids 查询list
+	 */
 	@Override
 	public List<T> findByIds(List<PK> ids) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public List<T> findList(T entity) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public PageInfo<T> findListByPage(BasicDBObject condition, BasicDBObject sort, Page<T> page) {
-		// TODO Auto-generated method stub
 		MongoDatabase db = mongoClient.getDatabase(currentDataBase());
 		String className = getGenericClass().getName();
+		//获取集合
 		MongoCollection<DBObject> collection = db.getCollection(className, DBObject.class);
 		int skip = page.getPageSize() * (page.getPageNum() - 1);
 		MongoCursor<DBObject> cursor = collection.find(condition).sort(sort).skip(skip).limit(page.getPageSize()).iterator();
@@ -123,7 +127,6 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 		while (cursor.hasNext()) {
 			info.getList().add((T) com.alibaba.fastjson.JSON.parseObject(cursor.next().toString(), getGenericClass()));
 		}
-
 		return info;
 	}
 
@@ -164,31 +167,26 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 
 	@Override
 	public void deleteByIds(List<PK> ids) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public boolean check(Map<String, Serializable> params) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public void batchDelete(List<PK> ids) {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void batchInsert(List<T> entitys) {
-		// TODO Auto-generated method stub
 		if (!CollectionUtils.isEmpty(entitys)) {
 			MongoDatabase db = mongoClient.getDatabase(currentDataBase());
 			String className = entitys.get(0).getClass().getName();
@@ -204,7 +202,6 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 
 	@Override
 	public void batchUpdate(List<T> entitys) {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -219,7 +216,6 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 	 * @Description 生成索引
 	 * @param fieldNames
 	 * @return 索引Name
-	 * @date 2017年6月5日
 	 */
 	@Override
 	public String createIndex(String fieldNames) {
@@ -232,7 +228,6 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 
 	@Override
 	public List<T> findByCondition(BasicDBObject queryCond) {
-		// TODO Auto-generated method stub
 		MongoDatabase db = mongoClient.getDatabase(currentDataBase());
 		String className = getGenericClass().getName();
 		MongoCollection<DBObject> collection = db.getCollection(className, DBObject.class);
@@ -252,12 +247,10 @@ public class BaseMongoDaoImpl<T extends BaseMongoEntity, PK extends Serializable
 	 *            需更新的信息 <br>
 	 *            eg:将name=yuce的记录的年龄更新为32<br>
 	 *            BasicDBObject condition = new BasicDBObject();<br>
-	 *            condition.put("name","yuce");<br>
+	 *            condition.put("name","jason");<br>
 	 *            BasicDBObject newObj=new BasicDBObject();<br>
 	 *            newObj.put("age",32);<br>
 	 *            update(condition , newObj);
-	 * @date 2017年6月5日
-	 * 
 	 * @return 更新记录的条数<br>
 	 *         注：通过updateOne，updateMany，replaceOne方法进行集合的文档更新。但是 _id 是不能更新的
 	 */

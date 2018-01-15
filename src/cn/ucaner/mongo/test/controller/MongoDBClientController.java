@@ -110,9 +110,6 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	
 	
 	
-	
-	
-	
 	public void findById() {
 		Long id = Hashing.MURMUR_HASH.hash("Ucaner");
 		TestEntity entity = testEntityService.findById(id);

@@ -19,7 +19,7 @@ import cn.ucaner.mongo.test.dao.TestEntityDao;
 /**
 * @Package：cn.ucaner.mongo.test.dao.impl   
 * @ClassName：TestEntityDaoImpl   
-* @Description：   <p> TODO</p>
+* @Description：   <p> TestEntityDaoImpl</p>
 * @Author： - DaoDou   
 * @CreatTime：2018年1月12日 上午11:41:24   
 * @Modify By：   

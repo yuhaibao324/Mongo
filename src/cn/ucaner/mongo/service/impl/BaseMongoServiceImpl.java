@@ -45,7 +45,6 @@ import cn.ucaner.mongo.vo.ConditionVo;
 public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends Serializable> implements BaseMongoService<T, PK> {
 	/**
 	 * 获取数据库操作类
-	 * 
 	 * @return
 	 */
 	protected abstract BaseMongoDao<T, PK> getDao();
@@ -106,7 +105,6 @@ public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends
 	 * @Description 生成索引
 	 * @param fieldNames
 	 * @return 索引Name
-	 * @date 2017年6月5日
 	 */
 	@Override
 	public String createIndex(String fieldNames) {
@@ -163,11 +161,9 @@ public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends
 	 * @Description 根据对象属性查找对象,多个条件默认and连接
 	 * @param paraMap
 	 * @return
-	 * @date 2017年6月5日
 	 */
 	@Override
 	public List<T> findByParams(Map<String, Object> paraMap) {
-		// TODO Auto-generated method stub
 		BasicDBObject queryCond = new BasicDBObject();
 
 		for (String key : paraMap.keySet()) {
@@ -180,7 +176,6 @@ public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends
 	 * @Description 根据条件查询 多个条件默认and连接
 	 * @param vos
 	 * @return
-	 * @date 2017年6月6日
 	 */
 	@Override
 	public List<T> findByCondition(ConditionVo... vos) {
@@ -192,7 +187,6 @@ public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends
 	 * @Description 根据条件更新信息 多个条件为and连接,条件都为等值判断,
 	 * @param conditionMap
 	 * @param updateMap
-	 * @date 2017年6月6日
 	 */
 	@Override
 	public Long update(Map<String, Object> conditionMap, Map<String, Object> updateMap) {
@@ -211,7 +205,6 @@ public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends
 	 * @Description 根据条件更新信息 多个条件为and连接
 	 * @param conditions
 	 * @param updateMap
-	 * @date 2017年6月6日
 	 * @return 更新记录的条数
 	 */
 	@Override
@@ -231,7 +224,6 @@ public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends
 	 * @Description Map参数对象转BasicDBObject对象 逻辑连接:and
 	 * @param infoMap
 	 * @return
-	 * @date 2017年6月5日
 	 */
 	protected BasicDBObject convertMapToDBObject(Map<String, Object> infoMap) {
 		if (!CollectionUtils.isEmpty(infoMap)) {
@@ -249,7 +241,6 @@ public abstract class BaseMongoServiceImpl<T extends BaseMongoEntity, PK extends
 	 * @Description ConditionVo集合转BasicDBObject 条件对象 逻辑连接:and
 	 * @param vos
 	 * @return
-	 * @date 2017年6月6日
 	 */
 	protected BasicDBObject convertConditionVoToDBObject(List<ConditionVo> vos) {
 		BasicDBObject condition = new BasicDBObject();

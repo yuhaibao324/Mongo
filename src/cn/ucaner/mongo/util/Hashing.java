@@ -15,9 +15,22 @@ import java.security.NoSuchAlgorithmException;
 
 import redis.clients.util.SafeEncoder;
 
-
+/**
+* @Package：cn.ucaner.mongo.util   
+* @ClassName：Hashing   
+* @Description：   <p> Hashing</p>
+* @Author： - DaoDou   
+* @CreatTime：2018年1月15日 下午3:47:57   
+* @Modify By：   
+* @ModifyTime：  2018年1月15日
+* @Modify marker：   
+* @version    V1.0
+ */
 public interface Hashing {
+	
   public static final Hashing MURMUR_HASH = new MurmurHash();
+  
+  
   public ThreadLocal<MessageDigest> md5Holder = new ThreadLocal<MessageDigest>();
 
   public static final Hashing MD5 = new Hashing() {

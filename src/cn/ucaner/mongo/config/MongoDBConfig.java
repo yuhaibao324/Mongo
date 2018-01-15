@@ -104,7 +104,6 @@ public class MongoDBConfig implements Serializable {
 	/**
 	 * @Description 服务器列表 比如:192.168.0.1:27017,192.168.0.2:27017
 	 * @return
-	 * @date 2017年5月27日
 	 */
 	public String getServerAddresses() {
 		return serverAddresses;
@@ -113,20 +112,16 @@ public class MongoDBConfig implements Serializable {
 	/**
 	 * @Description 服务器列表 比如:192.168.0.1:27017,192.168.0.2:27017
 	 * @return
-	 * @date 2017年5月27日
 	 */
 	public void setServerAddresses(String serverAddresses) {
 		this.serverAddresses = serverAddresses;
 	}
 
 	/**
-	 * 
 	 * 服务器实际建立的连接数量,default 200<br>
 	 * connectionsPerHost * threadAllowedToBlockForConnectionMultiplier == 数据库允许的最大并发数量
-	 *
 	 * @Description
 	 * @return
-	 * @date 2017年5月27日
 	 */
 	public Integer getConnectionsPerHost() {
 		return connectionsPerHost;
@@ -141,7 +136,6 @@ public class MongoDBConfig implements Serializable {
 	 * @Description 每个连接上可以排队等待的线程数量<br>
 	 *              connectionsPerHost * threadAllowedToBlockForConnectionMultiplier == 数据库允许的最大并发数量, Default is 5.
 	 * @return
-	 * @date 2017年5月27日
 	 */
 	public Integer getThreadsAllowedToBlockForConnectionMultiplier() {
 		return threadsAllowedToBlockForConnectionMultiplier;
@@ -151,7 +145,6 @@ public class MongoDBConfig implements Serializable {
 	 * @Description 每个连接上可以排队等待的线程数量<br>
 	 *              connectionsPerHost * threadAllowedToBlockForConnectionMultiplier == 数据库允许的最大并发数量, Default is 5.
 	 * @param threadsAllowedToBlockForConnectionMultiplier
-	 * @date 2017年5月27日
 	 */
 	public void setThreadsAllowedToBlockForConnectionMultiplier(Integer threadsAllowedToBlockForConnectionMultiplier) {
 		this.threadsAllowedToBlockForConnectionMultiplier = threadsAllowedToBlockForConnectionMultiplier;
@@ -161,7 +154,6 @@ public class MongoDBConfig implements Serializable {
 	 * @Description 一个线程访问数据库的时候，在成功获取到一个可用数据库连接之前的最长等待时间 <br>
 	 *              Default is 120,000. A value of 0 means that it will not wait
 	 * @return
-	 * @date 2017年5月27日
 	 */
 	public Integer getMaxWaitTime() {
 		return maxWaitTime;
@@ -171,7 +163,6 @@ public class MongoDBConfig implements Serializable {
 	 * @Description 一个线程访问数据库的时候，在成功获取到一个可用数据库连接之前的最长等待时间 <br>
 	 *              Default is 120,000. A value of 0 means that it will not wait
 	 * @param maxWaitTime
-	 * @date 2017年5月27日
 	 */
 	public void setMaxWaitTime(Integer maxWaitTime) {
 		this.maxWaitTime = maxWaitTime;
@@ -180,7 +171,6 @@ public class MongoDBConfig implements Serializable {
 	/**
 	 * @Description 与数据库建立连接的timeout, Default is 10,000
 	 * @return
-	 * @date 2017年5月27日
 	 */
 	public Integer getConnectTimeout() {
 		return connectTimeout;
@@ -189,7 +179,6 @@ public class MongoDBConfig implements Serializable {
 	/**
 	 * @Description 与数据库建立连接的timeout, Default is 10,000
 	 * @param connectTimeout
-	 * @date 2017年5月27日
 	 */
 	public void setConnectTimeout(Integer connectTimeout) {
 		this.connectTimeout = connectTimeout;
@@ -198,7 +187,6 @@ public class MongoDBConfig implements Serializable {
 	/**
 	 * @Description 数据库连接读取和写入数据的timeout,0 means no timeout.default is 0
 	 * @return
-	 * @date 2017年5月27日
 	 */
 	public Integer getSocketTimeout() {
 		return socketTimeout;
@@ -207,7 +195,6 @@ public class MongoDBConfig implements Serializable {
 	/**
 	 * @Description 数据库连接读取和写入数据的timeout,0 means no timeout.default is 0
 	 * @param socketTimeout
-	 * @date 2017年5月27日
 	 */
 	public void setSocketTimeout(Integer socketTimeout) {
 		this.socketTimeout = socketTimeout;

@@ -36,10 +36,19 @@ import cn.ucaner.mongo.config.MongoDBConfig;
  */
 public class MongoDBFactory {
 	
+	/**
+	 * MongoDB配置
+	 */
 	private MongoDBConfig config;
 	
+	/**
+	 * MongoDB客户端
+	 */
 	private static MongoClient client;
 	
+	/**
+	 * 默认的数据库
+	 */
 	public static String DEFAULT_DATA_BASE;
 
 	private void init() {
@@ -75,6 +84,12 @@ public class MongoDBFactory {
 		DEFAULT_DATA_BASE = config.getDataBase();
 	}
 
+	/**
+	 * 创建MongoClient
+	 * @Description: TODO
+	 * @return MongoClient
+	 * @Autor:Jason-2018年1月15日
+	 */
 	public MongoClient createClient() {
 		if (client == null) {
 			init();

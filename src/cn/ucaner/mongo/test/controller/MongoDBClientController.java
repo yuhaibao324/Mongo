@@ -99,7 +99,7 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	public List<TestEntity> findParams() {
 		Map<String, Object> paraMap = new HashMap<String, Object>();
 		paraMap.put("name", "Jason");
-		//paraMap.put("project", "MongoDB");
+		//paraMap.put("_id", "2471412807325387356");
 		List<TestEntity> entities = testEntityService.findByParams(paraMap);
 		for (TestEntity entity : entities) {
 			System.out.println(JSON.toJSONString(entity));

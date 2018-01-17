@@ -10,20 +10,19 @@
  */
 package cn.ucaner.mongo.test;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import cn.ucaner.mongo.test.service.TestEntityService;
+import cn.ucaner.mongo.util.Hashing;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import org.junit.Test;
 import org.slf4j.Logger;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
-
-import cn.ucaner.mongo.test.service.TestEntityService;
-import cn.ucaner.mongo.util.Hashing;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**     
 * @Package：cn.ucaner.mongo.test   
 * @ClassName：MongoDBClientTest   

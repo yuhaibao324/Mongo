@@ -187,15 +187,10 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
+			<!--<scope>test</scope>-->
 		</dependency>
 		
 		 <!-- swagger-springmvc -->
-         <dependency>
-            <groupId>com.mangofactory</groupId>
-            <artifactId>swagger-springmvc</artifactId>
-            <version>0.9.5</version>
-        </dependency>
 	    <dependency>
 	        <groupId>com.mangofactory</groupId>
 	        <artifactId>swagger-springmvc</artifactId>

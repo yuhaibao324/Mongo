@@ -3,3 +3,6 @@
 /.project
 /log/
 /target/
+!/.idea/
+/.idea/
+.idea/

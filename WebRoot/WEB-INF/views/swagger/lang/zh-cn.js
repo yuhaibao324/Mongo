@@ -3,7 +3,7 @@
 /* jshint quotmark: double */
 window.SwaggerTranslator.learn({
     "Warning: Deprecated":"警告：已过时",
-    "Implementation Notes":"实现备注",
+    "Implementation Notes":"备注",
     "Response Class":"响应类",
     "Status":"状态",
     "Parameters":"参数",
@@ -22,7 +22,7 @@ window.SwaggerTranslator.learn({
     "Response Headers":"响应头",
     "Hide Response":"隐藏响应",
     "Headers":"头",
-    "Try it out!":"试一下！",
+    "Try it out!":"Go",
     "Show/Hide":"显示/隐藏",
     "List Operations":"显示操作",
     "Expand Operations":"展开操作",
@@ -38,7 +38,7 @@ window.SwaggerTranslator.learn({
     "Terms of service":"服务条款",
     "Created by":"创建者",
     "See more at":"查看更多：",
-    "Contact the developer":"联系开发者",
+    "Contact the developer":"UcanerX-Mail-联系方式",
     "api version":"api版本",
     "Response Content Type":"响应Content Type",
     "Parameter content type:":"参数类型:",
@@ -49,7 +49,7 @@ window.SwaggerTranslator.learn({
     "Can't read from server.  It may not have the appropriate access-control-origin settings.":"无法从服务器读取。可能没有正确设置access-control-origin。",
     "Please specify the protocol for":"请指定协议：",
     "Can't read swagger JSON from":"无法读取swagger JSON于",
-    "Finished Loading Resource Information. Rendering Swagger UI":"已加载资源信息。正在渲染Swagger UI",
+    "Finished Loading Resource Information. Rendering Swagger UI":"已加载资源信息,正在渲染Swagger UI",
     "Unable to read api":"无法读取api",
     "from path":"从路径",
     "server returned":"服务器返回"

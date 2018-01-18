@@ -15,15 +15,22 @@ import java.util.Random;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
 import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiModel;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
 
+import cn.ucaner.common.api.vo.Entity;
+import cn.ucaner.common.api.vo.ParmsVo;
 import cn.ucaner.mongo.test.TestEntity;
 import cn.ucaner.mongo.test.service.TestEntityService;
 
@@ -41,6 +48,7 @@ import cn.ucaner.mongo.test.service.TestEntityService;
 @Controller
 @RequestMapping("/apidoc")
 @Api(value="ApiController")
+@ApiModel(description = "api归类！")
 public class ApiController {
 	
 	private static Logger logger = LoggerFactory.getLogger(ApiController.class);
@@ -50,9 +58,10 @@ public class ApiController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/add",method=RequestMethod.POST)
-	@ApiOperation(value = "接口说明",notes = "接口发布说明")
+	@ApiOperation(value = "apidoc添加操作",notes = "这是一个实现Swagger演示案例，结合SwaagerUI 学习使用!")
 	@ApiParam(name = "参数名称", value = "参数具体描述")
-	public Long save() {
+	@ApiResponses({ @ApiResponse(code = 200, message = "Sunds Intersting!") })
+	public Long add(ParmsVo parmas) {
 		TestEntity entity = new TestEntity();
 		//随机
 		 long random = new Random().nextLong();
@@ -62,6 +71,20 @@ public class ApiController {
 		Long entity_Id = testEntityService.insert(entity);
 		logger.info("id:{}",entity_Id);
 		return entity_Id;
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/test",method=RequestMethod.POST)
+	@ApiOperation(value = "apidoc添加test操作",notes = "Swagger演示案例,结合SwaagerUI 学习使用!",response = Entity.class)
+	@ApiParam(name = "参数名称entity", value = "参数具体描述one two three")
+	public Entity test(Entity entity) {
+		Entity entt = new Entity();
+		entt.setOne("One");
+		entt.setTwo("Two");
+		entt.setThree("Three");
+		System.out.println(JSON.toJSONString(entity));
+		return entt;
 	}
 	
 }

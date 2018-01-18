@@ -53,7 +53,7 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	private TestEntityService testEntityService;
 	
 	
-	@RequestMapping(value = "/mongoTest")
+	@RequestMapping(value = "/mongoTest",method=RequestMethod.POST)
 	public ModelAndView mongoTest() {
 		ModelAndView view =new ModelAndView("/login");;
 		return view;

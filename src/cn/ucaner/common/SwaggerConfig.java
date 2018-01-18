@@ -54,6 +54,7 @@ public class SwaggerConfig {
          .apiInfo(apiInfo())
          .includePatterns(".*?");
     }
+    
  
     private ApiInfo apiInfo(){
         ApiInfo apiInfo = new ApiInfo(

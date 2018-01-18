@@ -19,6 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiParam;
 
@@ -38,6 +39,7 @@ import cn.ucaner.mongo.test.service.TestEntityService;
 */
 @Controller
 @RequestMapping("/apidoc")
+@Api(value="ApiController",description="api接口描述")
 public class ApiController {
 	
 	private static Logger logger = LoggerFactory.getLogger(ApiController.class);

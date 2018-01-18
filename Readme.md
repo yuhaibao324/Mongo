@@ -98,6 +98,8 @@ public class ApiController {
 
 mongoDB : http://mongo.ucaner.cn -->login.ftl
 
+### SwaggerUI 设计一个小Console Logo
+![](http://upload-images.jianshu.io/upload_images/7802425-b1ea82104bd5305d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### FAQ
 - Maven很多依赖估计有问题

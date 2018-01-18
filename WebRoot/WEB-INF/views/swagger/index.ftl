@@ -33,8 +33,14 @@
 <script src='lang/zh-cn.js' type='text/javascript'></script>
 
 <script type="text/javascript">
+	var logo ="  | |  | |                                |  \\/  |                            \r\n" + 
+	          "  | |  | |  ___  __ _  _ __    ___  _ __  | \\  / |  ___   _ __    __ _   ___  \r\n" + 
+	          "  | |  | | / __|/ _` || '_ \\  / _ \\| '__| | |\\/| | / _ \\ | '_ \\  / _` | / _ \\ \r\n" + 
+	          "  | |__| || (__| (_| || | | ||  __/| |    | |  | || (_) || | | || (_| || (_) |\r\n" + 
+	          "   \\____/  \\___|\\__,_||_| |_| \\___||_|    |_|  |_| \\___/ |_| |_| \\__, | \\___/ \r\n" + 
+	          "                                                                  __/ |       \r\n" + 
+	          "                                                                 |___/        ";
     $(function () {
-    	console.log("Ucaner - Mongo - Swagger");
      	var url = window.location.search.match(/url=([^&]+)/);
 	      if (url && url.length > 1) {
 	        url = decodeURIComponent(url[1]);
@@ -81,7 +87,9 @@
       });
 
       window.swaggerUi.load();
-
+      //UcanerX - Mongo Logo 
+	  console.log("%c"+logo,"color: blue;font-size: 12px");
+	  console.log("%cMade By Jason !  Copyright 1994-2018 JasonInternational All rights reserved.","color: red; font-size: 20px");
       function log() {
         if ('console' in window) {
           console.log.apply(console, arguments);

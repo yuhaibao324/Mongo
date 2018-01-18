@@ -26,7 +26,10 @@ http://mongo.ucaner.cn
 
 ### Swagger ApiDocs 集成
 ![](http://upload-images.jianshu.io/upload_images/7802425-af0248d896a7d5bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+> 基本使用
+- 地址:http://{ip:port}/{projectName}/swagger/index#/  eg: http://localhost:8050/Mongo/swagger/index#/
+- API示例
+![](http://upload-images.jianshu.io/upload_images/7802425-c1d97f390f43ed56.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ### MongoDB Liunx
 ![](http://upload-images.jianshu.io/upload_images/7802425-bfb65b86e4b9987f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

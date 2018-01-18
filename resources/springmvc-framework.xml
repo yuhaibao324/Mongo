@@ -68,7 +68,7 @@
 	<bean id="freemarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
 		<!-- cn.ucaner.common.freemark.CustomerFreeMark  org.springframework.web.servlet.view.freemarker.FreeMarkerView -->
 		<!-- 自定义视图 -->
-        <property name="viewClass" value="cn.ucaner.common.freemark.CustomerFreeMark"/>
+        <property name="viewClass" value="cn.ucaner.common.framework.freemark.CustomerFreeMark"/>
 		<property name="cache" value="true"/>
 		<property name="prefix" value="/"/>
 		<property name="suffix" value=".ftl"/>

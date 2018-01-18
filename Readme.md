@@ -14,9 +14,8 @@ mongoDB	是一个介于关系数据库和非关系数据库之间的产品，是
 他支持的数据结构非常松散，是类似json的bson格式，因此可以存储比较复杂的数据类型。
 Mongo最大的特点是他支持的查询语言非常强大，其语法有点类似于面向对象的查询语言，几乎可以实现类似关系数据库单表查询的绝大部分功能，而且还支持对数据建立索引。 
 
-SSM+Redis+FreeMark+MongoDB 基本的脚手架 用于入门学习
+SS+Redis+FreeMark+MongoDB+Swagger SS脚手架 用于入门学习
 
-http://mongo.ucaner.cn
 
 ### 代码结构图
 ![](http://upload-images.jianshu.io/upload_images/7802425-df1b75c344c21878.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -31,45 +30,6 @@ http://mongo.ucaner.cn
 - API示例
 
 ``` java
-/**
- * <html>
- * <body>
- *  <P> Copyright 1994-2018 JasonInternational</p>
- *  <p> All rights reserved.</p>
- *  <p> Created on 2018年1月12日 </p>
- *  <p> Created by Jason</p>
- *  </body>
- * </html>
- */
-package cn.ucaner.common.api;
-
-import java.util.Random;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
-import com.wordnik.swagger.annotations.ApiParam;
-
-import cn.ucaner.mongo.test.TestEntity;
-import cn.ucaner.mongo.test.service.TestEntityService;
-
-/**     
-* @Package：cn.ucaner.common.api   
-* @ClassName：ApiController   
-* @Description：   <p> ApiController</p>
-* @Author： - DaoDou   
-* @CreatTime：2018年1月17日 下午1:40:07   
-* @Modify By：   
-* @ModifyTime：  2018年1月17日
-* @Modify marker：   
-* @version    V1.0
-*/
 @Controller
 @RequestMapping("/apidoc")
 @Api(value="ApiController",description="api接口描述")

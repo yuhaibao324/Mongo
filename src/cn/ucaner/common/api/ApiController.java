@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.wordnik.swagger.annotations.Api;
@@ -39,7 +40,7 @@ import cn.ucaner.mongo.test.service.TestEntityService;
 */
 @Controller
 @RequestMapping("/apidoc")
-@Api(value="ApiController",description="api接口描述")
+@Api(value="ApiController")
 public class ApiController {
 	
 	private static Logger logger = LoggerFactory.getLogger(ApiController.class);
@@ -47,10 +48,9 @@ public class ApiController {
 	@Autowired
 	private TestEntityService testEntityService;
 	
-
 	@ResponseBody
-	@RequestMapping(value = "/add")
-	@ApiOperation(value = "接口说明", httpMethod = "接口请求方式",notes = "接口发布说明")
+	@RequestMapping(value = "/add",method=RequestMethod.POST)
+	@ApiOperation(value = "接口说明",notes = "接口发布说明")
 	@ApiParam(name = "参数名称", value = "参数具体描述")
 	public Long save() {
 		TestEntity entity = new TestEntity();

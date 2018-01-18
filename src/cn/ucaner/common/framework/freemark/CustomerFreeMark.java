@@ -8,7 +8,7 @@
  *  </body>
  * </html>
  */
-package cn.ucaner.common.freemark;
+package cn.ucaner.common.framework.freemark;
 
 import java.util.Map;
 

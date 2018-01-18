@@ -20,6 +20,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -64,7 +65,7 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	 * @Autor:Jason-2018年1月12日
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/add")
+	@RequestMapping(value = "/add",method=RequestMethod.POST)
 	public Long save() {
 		TestEntity entity = new TestEntity();
 		//随机
@@ -82,7 +83,7 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	 * @Autor:Jason-2018年1月12日
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/index")
+	@RequestMapping(value = "/index",method=RequestMethod.POST)
 	public void index() {
 		String indexName = testEntityService.createIndex("name:"+new Random().nextInt());
 		System.out.println(indexName);
@@ -95,7 +96,7 @@ private static Logger logger = LoggerFactory.getLogger(MongoDBClientTest.class);
 	 * @Autor:Jason-2018年1月12日
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/find")
+	@RequestMapping(value = "/find",method=RequestMethod.POST)
 	public List<TestEntity> findParams() {
 		Map<String, Object> paraMap = new HashMap<String, Object>();
 		paraMap.put("name", "Jason");

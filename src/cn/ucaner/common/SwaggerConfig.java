@@ -58,8 +58,8 @@ public class SwaggerConfig {
  
     private ApiInfo apiInfo(){
         ApiInfo apiInfo = new ApiInfo(
-                "MongoUcaner", 
-                "Mongo-API",
+                "UcanerX - Mongo", 
+                "Mongo-API + Swagger [接口文档]",
                 "Api 接口", 
                 "jasonandy@hotmail.com", 
                 "API Licence",

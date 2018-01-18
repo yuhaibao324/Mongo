@@ -24,6 +24,9 @@ http://mongo.ucaner.cn
 ### 逻辑结构图
 ![](http://upload-images.jianshu.io/upload_images/7802425-fbe8281e48a6649c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+### Swagger ApiDocs 集成
+![](http://upload-images.jianshu.io/upload_images/7802425-af0248d896a7d5bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 ### MongoDB Liunx
 ![](http://upload-images.jianshu.io/upload_images/7802425-bfb65b86e4b9987f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

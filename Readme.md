@@ -24,7 +24,7 @@ SS+Redis+FreeMark+MongoDB+Swagger SS脚手架 用于入门学习
 ![](http://upload-images.jianshu.io/upload_images/7802425-fbe8281e48a6649c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### Swagger ApiDocs 集成
-![](http://upload-images.jianshu.io/upload_images/7802425-af0248d896a7d5bd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://upload-images.jianshu.io/upload_images/7802425-ce3afe19f07b11c8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 > 基本使用
 - 地址:http://{ip:port}/{projectName}/swagger/index#/  eg: http://localhost:8050/Mongo/swagger/index#/
 - API示例
@@ -32,16 +32,17 @@ SS+Redis+FreeMark+MongoDB+Swagger SS脚手架 用于入门学习
 ``` java
 @Controller
 @RequestMapping("/apidoc")
-@Api(value="ApiController",description="api接口描述")
+@Api(value="ApiController")
 public class ApiController {
-
+	
 	private static Logger logger = LoggerFactory.getLogger(ApiController.class);
+	
 	@Autowired
 	private TestEntityService testEntityService;
 	
 	@ResponseBody
-	@RequestMapping(value = "/add")
-	@ApiOperation(value = "接口说明", httpMethod = "接口请求方式",notes = "接口发布说明")
+	@RequestMapping(value = "/add",method=RequestMethod.POST)
+	@ApiOperation(value = "接口说明",notes = "接口发布说明")
 	@ApiParam(name = "参数名称", value = "参数具体描述")
 	public Long save() {
 		TestEntity entity = new TestEntity();
@@ -54,8 +55,11 @@ public class ApiController {
 		logger.info("id:{}",entity_Id);
 		return entity_Id;
 	}
+	
 }
 ```
+
+
 ### MongoDB Liunx
 ![](http://upload-images.jianshu.io/upload_images/7802425-bfb65b86e4b9987f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

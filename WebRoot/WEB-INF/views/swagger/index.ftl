@@ -28,18 +28,19 @@
   <script src='lib/swagger-oauth.js' type='text/javascript'></script>
 
   <!-- Some basic translations -->
-  <!-- <script src='lang/translator.js' type='text/javascript'></script> -->
-  <!-- <script src='lang/ru.js' type='text/javascript'></script> -->
-  <!-- <script src='lang/en.js' type='text/javascript'></script> -->
+<script src='lang/translator.js' type='text/javascript'></script>
+<script src='lang/ru.js' type='text/javascript'></script>
+<script src='lang/zh-cn.js' type='text/javascript'></script>
 
-  <script type="text/javascript">
+<script type="text/javascript">
     $(function () {
-      var url = window.location.search.match(/url=([^&]+)/);
-      if (url && url.length > 1) {
-        url = decodeURIComponent(url[1]);
-      } else {
-        url = "http://localhost:8050/Mongo/api-docs";
-      }
+    	console.log("Ucaner - Mongo - Swagger");
+     	var url = window.location.search.match(/url=([^&]+)/);
+	      if (url && url.length > 1) {
+	        url = decodeURIComponent(url[1]);
+	      } else {
+	        url = "http://localhost:8050/Mongo/api-docs";
+	      }
 
       hljs.configure({
         highlightSizeThreshold: 5000
@@ -87,7 +88,7 @@
         }
       }
   });
-  </script>
+</script>
 </head>
 
 <body class="swagger-section">

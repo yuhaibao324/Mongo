@@ -37,7 +37,7 @@ import cn.ucaner.mongo.test.service.TestEntityService;
 * @version    V1.0
 */
 @Controller
-@RequestMapping("/mongo/api")
+@RequestMapping("/apidoc")
 public class ApiController {
 	
 	private static Logger logger = LoggerFactory.getLogger(ApiController.class);

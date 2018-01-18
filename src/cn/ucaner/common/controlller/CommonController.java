@@ -26,12 +26,11 @@ import org.springframework.web.servlet.ModelAndView;
 * @version    V1.0
 */
 @Controller
-@RequestMapping("/mongo")
+@RequestMapping("/swagger")
 public class CommonController {
 	
-	@RequestMapping("/swagger")
+	@RequestMapping("/index")
     public ModelAndView swagger() {
-		///Mongo/WebRoot/WEB-INF/views/swagger/index.ftl
         ModelAndView model = new ModelAndView("swagger/index");
         return model;
     }

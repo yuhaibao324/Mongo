@@ -10,6 +10,16 @@
  */
 package cn.ucaner.common;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+
+import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
+import com.mangofactory.swagger.models.dto.ApiInfo;
+import com.mangofactory.swagger.plugin.EnableSwagger;
+import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
+
 /**     
 * @Package：cn.ucaner.common   
 * @ClassName：SwaggerConfig   
@@ -21,22 +31,18 @@ package cn.ucaner.common;
 * @Modify marker：   
 * @version    V1.0
 */
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-
-import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
-import com.mangofactory.swagger.models.dto.ApiInfo;
-import com.mangofactory.swagger.plugin.EnableSwagger;
-import com.mangofactory.swagger.plugin.SwaggerSpringMvcPlugin;
-
-
 @Configuration
 @EnableSwagger
+@EnableWebMvc
 public class SwaggerConfig {
 	
     private SpringSwaggerConfig springSwaggerConfig;
     
+    /**
+     * @Description: 注入springSwaggerConfig
+     * @param springSwaggerConfig void
+     * @Autor:Jason-2018年1月18日
+     */
     @Autowired
     public void setSpringSwaggerConfig(SpringSwaggerConfig springSwaggerConfig){
         this.springSwaggerConfig = springSwaggerConfig;

@@ -11,7 +11,7 @@
 	   <large-icon>favicon.ico</large-icon>
 	</icon>
 	<!-- 使用logback作为平台日志插件 -->
-	<!-- <context-param>
+<!-- 	<context-param>
 		<param-name>logbackConfigLocation</param-name>
 		<param-value>classpath:/logback/logback.xml</param-value>
 	</context-param>
@@ -31,9 +31,15 @@
 	</listener>
 
 	<!-- 容器启动时监听日志文件数据的加载 log4j -->
-  	<!-- <listener>
+  	<listener>
     	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-    </listener> -->
+    </listener>
+    
+   	<!-- 实例化Spring容器 -->
+	<!-- 应用启动时,该监听器被执行,它会读取Spring相关配置文件,其默认会到WEB-INF中查找applicationContext.xml -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 	<!-- 解决乱码问题 -->
 	<!-- forceEncoding默认为false,此时效果可大致理解为request.setCharacterEncoding("UTF-8") -->
@@ -69,13 +75,6 @@
 		<servlet-name>spring-mvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	
-	<!-- 实例化Spring容器 -->
-	<!-- 应用启动时,该监听器被执行,它会读取Spring相关配置文件,其默认会到WEB-INF中查找applicationContext.xml -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
 	
 	<!--容器的session有效时间的配置 单位：分钟  -->
 	<session-config>  

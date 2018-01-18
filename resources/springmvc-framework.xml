@@ -98,18 +98,24 @@
         <property name="maxInMemorySize" value="1048576"></property>
     </bean>
 
+	<!-- 解决注入问题 springSwaggerConfig-->
+	<bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig" />
+	
 	<!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL -->
 	<mvc:default-servlet-handler/>
 
 	<!-- 定义无需Controller的url<->view直接映射 -->
 	<mvc:view-controller path="/" view-name="redirect:/login"/>
+	
+	<mvc:resources mapping="/swagger/**" location="/WEB-INF/views/swagger/"/>
 
-	<!-- 多个拦截器,顺序执行 -->
 	<!-- <mvc:interceptors>
-		<mvc:interceptor>
-			<mvc:mapping path="/platform/**" />
-			<bean class="" />
-		</mvc:interceptor>
+	<mvc:interceptor>
+		<mvc:exclude-mapping path="/swagger/js/**"/>
+	          <mvc:exclude-mapping path="/swagger/css/**"/>
+	          <mvc:exclude-mapping path="/swagger/images/**"/>
+		<bean class="cn.ucaner.common.interceptor.LoginInterceptor" />
+	</mvc:interceptor>
 	</mvc:interceptors> -->
 
 </beans>

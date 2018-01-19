@@ -28,6 +28,7 @@ SS+Redis+FreeMark+MongoDB+Swagger SS脚手架 用于入门学习
 > 基本使用
 - 地址:http://{ip:port}/{projectName}/swagger/index#/  eg: http://localhost:8050/Mongo/swagger/index#/
 - API示例
+- UcanerLiunx Address ：[http://apidoc.ucaner.cn] 
 
 ``` java
 @Controller
